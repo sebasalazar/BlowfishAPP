@@ -1,0 +1,8 @@
+mkdir -p build
+gcc -Wall -g3 -c -o build/blowfish.o blowfish.c
+mkdir -p build
+gcc -Wall -g3 -c -o build/main.o main.c
+mkdir -p dist
+gcc -Wall -g3    -o dist/cryptoapp build/blowfish.o build/main.o -lssl -lcrypto 
+rm -f -fr build
+rm -f -fr core
